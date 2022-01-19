@@ -1,0 +1,42 @@
+@font-face {
+    font-family: pip-boy;
+    src: url("../monofonto.otf");
+}
+body{
+    font-family: pip-boy ,sans-serif;
+    color: #14fe17;
+    background: #272b23;
+}
+/*ul color*/
+li a,#main-nav a{
+    color: #14fe17;
+}
+/*border bottom of navbar*/
+.navbar{
+    border-bottom: 2px solid;
+    margin: 0px 10px;
+}
+.navbar::before, navbar::after{
+    height: 5px;
+    width: 2px;
+    content: "";
+    display: block;
+    position: absolute;
+
+}
+/*center thae image*/
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(6) brightness(1) contrast(2);
+}
+/*align the footer and remain fixed at one place*/
+.foot-nav{
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 0rem);
+    margin: 10px;
+
+}
