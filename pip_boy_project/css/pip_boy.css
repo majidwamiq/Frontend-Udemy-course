@@ -2,29 +2,94 @@
     font-family: pip-boy;
     src: url("../monofonto.otf");
 }
+
 body{
     font-family: pip-boy ,sans-serif;
     color: #14fe17;
     background: #272b23;
 }
+
+/*for scanline effect*/
+body::after{
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: repeating-linear-gradient(0deg,rgba(0,0,0,.4), rgba(0,0,0,.5) 1px, transparent 1px ,transparent 2px );
+    opacity:.3;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+/*navbar active styling*/
+.nav-item.active::before{
+    content: "";
+    height: 20px;
+    width: 9%;
+    background: #272b23;
+    position: absolute;
+    top: 26px;
+    left: 5.5rem;
+    border-left: 2px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
 /*ul color*/
 li a,#main-nav a{
     color: #14fe17;
+    font-size: 32px;
+    line-height: 22px;
+    padding-bottom: 0px;
 }
+/*.navbar-light .navbar-nav > li.nav-item >.nav-link,*/
+.navbar-light .navbar-nav > li.nav-item.active >.nav-link{
+    background: #272b23;
+    position: relative;
+    z-index: 50;
+    border: 1px solid #272b23;
+    width: fit-content;
+    margin-left: 97px;
+    padding: 2px;
+}
+
 /*border bottom of navbar*/
 .navbar{
     border-bottom: 2px solid;
     margin: 0px 10px;
 }
-.navbar::before, navbar::after{
-    height: 5px;
+
+/*navbar bottom*/
+.navbar::before, .navbar::after{
+    height: 7px;
     width: 2px;
     content: "";
     display: block;
     position: absolute;
-
+    background: #14fe17;
+    bottom: -8px;
 }
-/*center thae image*/
+.navbar::before{
+    left: 0px;
+}
+.navbar::after{
+    right: 0px!important;
+}
+
+
+/*navbar alignment*/
+.navbar-nav{
+    width: 100%;
+}
+.navbar-light ul .navbar-nav>li{
+    display: block;
+    position:relative;
+    /*width: 100%;*/
+}
+
+/*center the image*/
 .center-image {
     display: flex;
     justify-content: center;
@@ -32,11 +97,15 @@ li a,#main-nav a{
     margin-top: 100px;
     filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(6) brightness(1) contrast(2);
 }
+
 /*align the footer and remain fixed at one place*/
 .foot-nav{
     position: fixed;
     bottom: 0;
     width: calc(100% - 0rem);
     margin: 10px;
-
+}
+.nav.nav-tabs{
+    margin: 20px;
+    border-bottom: none!important;
 }
