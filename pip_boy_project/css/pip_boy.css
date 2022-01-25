@@ -49,7 +49,7 @@ body::after{
     border-right: 2px solid;
 }
 /*ul color*/
-li a,#main-nav a{
+#main-nav a,ul > li.nav-item > a.nav-link{
     color: #14fe17;
     font-size: 32px;
     line-height: 22px;
@@ -233,6 +233,45 @@ li a,#main-nav a{
 }
 .item-list{
     list-style: none;
-    padding: 0px;
-    font-size: 30px;
+    padding-left: 35px;
+}
+.item-list li a{
+    display: block;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #14fe17;
+}
+.item-list li a:hover{
+    text-decoration: none;
+    background: #14fe17;
+    color: #272b23;
+}
+/*.item-list a.active::before{*/
+/*    content: "";*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    width: 8px;*/
+/*    height: 8px;*/
+/*    background: #14fe17;*/
+/*    margin-top: 7px;*/
+/*    margin-left: -17px;*/
+/*}*/
+/*.item-list a.active:hover::before{*/
+/*    background: #272b23;*/
+/*}*/
+
+
+
+.tab-pane.full{
+    height: calc(100vh - 180px);
+}
+.items-stats{
+    position: absolute;
+    right: 30px;
+    width:200px;
+    bottom: 60px;
+}
+.items-stats .row .col-12{
+    background: rgba(16,255,0,0.15);
+    margin: 2px;
 }
